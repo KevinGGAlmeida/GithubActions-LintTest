@@ -22,8 +22,3 @@ jobs:
 
       - name: Run Lint test
         run: pylint . --fail-under=8.0
-    
-      - name: Show data
-        run: |
-          "Login: ${{ github.event.pull_request.user.login }}"
-          "Nome: ${{ github.event.pull_request.user.name }}"
