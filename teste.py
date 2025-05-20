@@ -1,0 +1,2 @@
+"""Testing function"""
+print("ola")
