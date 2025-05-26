@@ -2,7 +2,7 @@ name: Pull Request Check
 
 on:
   pull_request:
-    branches: ["*"]
+    branches: ["bugfix*","feature*"]
 
 jobs:
   build:
@@ -19,6 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Pre-commit
+        run: pre-commit run --all-files
 
       - name: Run Lint test
         run: pylint . --fail-under=8.0
